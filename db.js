@@ -9,11 +9,6 @@ const pool = new Pool({
     database:process.env.DB_DATABASE,
     ssl:true
 });
-    host:'dpg-d7cdi9u7r5hc73f5eqtg-a.oregon-postgres.render.com',
-    port:5432,
-    database:'foodapp_dik3',
-    ssl:true
-});
 
 pool.on('connect', ()=>{
     console.log("Database connected successfully")
@@ -25,7 +20,7 @@ pool.on('error', (err) => {
 
 pool.query('SELECT NOW()', (err, res) => {
     if (err){
-        console.error('Database connection failed', err.messgae);
+        console.error('Database connection failed', err.message);
     } else {
         console.log('Database connection successful');
     }
