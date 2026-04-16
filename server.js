@@ -42,7 +42,7 @@ app.post('/api/add-products', async (req, res) => {
         const { name, price } = req.body;
         
         // Validate input
-        if (!name || price === undefined) {
+        if (!name || price == undefined) {
             return res.status(400).json({ error: 'Name and price are required' });
         }
         
